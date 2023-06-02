@@ -5,21 +5,61 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ESTE ES EL LOGIN</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/output.css') }}">
 </head>
-<body>
-<div class="flex-auto h-full justify-center">
-    <div class="h-full w-full bg-fuchsia-100">
-        hola amigos de youtube
+<body class="bg-fuchsia-100">
+<!-- header -->
+<header>
+{#    the padding has been made that way because of matching purposes with index.html#}
+    <nav class="absolute h-16 pt-5 px-12">
+        <a href="{{ url_for("index") }}">Home</a>
+    </nav>
+</header>
+<!-- main section -->
+<section class="flex items-center justify-center h-screen">
+    <!--    external container    -->
+    <div class="flex justify-center min-h-1/2 min-w-1/5 rounded-2xl bg-fuchsia-200 shadow-lg shadow-purple-800 p-5 max-w-3xl ">
 
-        <div class="flex h-full">
-            <div class="relative w-40 text-sky-500 border-b-purple-800 bg-teal-200">
-                <p class="cursor-pointer">Tailwind is great!</p>
+        <!--    inner container    -->
+        <div class="flex flex-col gap-5 align-center w-11/12 rounded-2xl text-indigo-800 bg-fuchsia-500 p-10">
+
+            <!-- top container -->
+            <div class="flex flex-col gap-2 items-center">
+                <h2 class="font-bold text-3xl h-1/2">
+                    Login
+                </h2>
+                <p>If you are already a user please insert your credentials.</p>
+            </div>
+            <!-- form container -->
+            <form action="" class="flex flex-col gap-2">
+                <label for="email" class="px-2">Email</label>
+                <input class="outline-none caret-pink-500 focus:ring ring-purple-300 pl-3 rounded-md shadow-lg border"
+                       type="email" id="email" placeholder="Enter email">
+
+                <label for="password" class="px-2">Password</label>
+                <input class="outline-none caret-pink-500 focus:ring ring-purple-300 pl-3 rounded-md shadow-lg border"
+                       type="password" id="password"
+                       placeholder="Enter password">
+            </form>
+
+            <hr>
+
+            <!-- bottom container -->
+            <div class="flex justify-between">
+                <a href="{{ url_for("index") }}"> Create account </a>
+                <a href="{{ url_for("index") }}"> Forgot Password? </a>
+            </div>
+
+            <div class="flex justify-center">
+                <button class="flex justify-center w-2/5 bg-fuchsia-200 rounded-md shadow-lg shadow-purple-800 hover:bg-fuchsia-300">
+                    Log In
+                </button>
             </div>
 
         </div>
     </div>
-</div>
+
+</section>
 </body>
 </html>

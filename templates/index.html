@@ -5,22 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TWICEARTE</title>
+    <title> TWICEARTE </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/output.css') }}">
 </head>
 <body class="bg-fuchsia-100">
 <div class="h-full">
     <header>
-        <nav class="rounded-lg h-16 bg-gradient-to-br from-violet-400 to-violet-700 border-8 border-indigo-200 border-b-indigo-500 mx-auto px-10">
+        <nav class="rounded-lg h-16 bg-gradient-to-br from-purple-300 to-purple-700 border-8 border-violet-200 border-b-violet-500 px-10">
             <div class="flex h-full items-center ">
                 <div class="grid grid-cols-3 w-full">
-
+                    <!-- home btn -->
                     <div class="flex justify-start">
-                        <a href="/"> Home </a>
+                        <a href="{{ url_for('index') }}"> Home </a>
                     </div>
 
                     <div class="flex justify-center w-full">
-                        <form id="searchbar" class="bg-gray-300 rounded-lg w-1/2" action=""
+                        <form class=" w-1/2" action=""
                               aria-label="This is the form!"
                               role="search">
 
@@ -31,17 +31,19 @@
                                 {#                                    <path stroke-linecap="round" stroke-linejoin="round"#}
                                 {#                                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>#}
                                 {#                                </svg>#}
-                                <label class="w-full">
-                                    <input type="search" class="bg-transparent focus:bg-gray-400 w-full">
-                                </label>
+                                <label for="search" class="w-full"></label>
+                                <input type="search" id="search"
+                                       class="bg-gray-200 rounded-lg focus:bg-gray-300 w-full px-2"
+                                       placeholder="Search">
+
                             </div>
 
                         </form>
                     </div>
 
-                    <div class="flex justify-end">
-                        <a href="/login"> Hello World </a>
-                        <a href="/login" class="pl-4">login</a>
+                    <div class="flex justify-end gap-4">
+                        <a href="{{ url_for('login') }}"> Hello World </a>
+                        <a href="{{ url_for('login') }}"> Login </a>
                     </div>
 
                 </div>
@@ -50,7 +52,7 @@
     </header>
 
     <div class="flex h-screen">
-        <div class="relative w-40 text-sky-500 border-b-purple-800 bg-blue-200">
+        <div class="relative w-40 text-sky-500 border-b-purple-800 bg-purple-200">
             <p class="cursor-pointer">Tailwind is great!</p>
         </div>
 
